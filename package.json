@@ -4,9 +4,17 @@
   "description": "simple node rest api",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
-    "dev": "nodemon",
-    "test": "tslint -c tslint.json 'src/**/*.ts'"
+    "start": "npx tsc && node dist/app.js",
+    "dev": "npx nodemon",
+    "test": "npx tslint -c tslint.json 'src/**/*.ts'",
+    "dev_up": "npx tsc && docker-compose -f docker-compose.dev.yml up -d",
+    "dev_restart": "docker-compose -f docker-compose.dev.yml restart",
+    "dev_down": "docker-compose -f docker-compose.dev.yml down",
+    "dev_logs": "docker-compose -f docker-compose.dev.yml logs -f",
+    "prod_up": "npx tsc && docker-compose -f docker-compose.prod.yml up -d",
+    "prod_restart": "docker-compose -f docker-compose.prod.yml restart",
+    "prod_down": "docker-compose -f docker-compose.prod.yml down",
+    "prod_logs": "docker-compose -f docker-compose.prod.yml logs -f"
   },
   "author": "",
   "license": "MIT",

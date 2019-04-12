@@ -1,8 +1,7 @@
 FROM mhart/alpine-node:11
 WORKDIR /srv
 COPY package*.json ./
-RUN npm install tslint typescript nodemon -g&& \
-npm install
-COPY . .
+RUN npm install --production
+COPY dist .
 EXPOSE 5000
-CMD ["node", "index.js"]
+ENTRYPOINT node app.js
